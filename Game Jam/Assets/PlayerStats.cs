@@ -10,7 +10,6 @@ public class PlayerStats : MonoBehaviour
 
 
     public GameObject deathPanel;
-    public float playerHP = 100;
     public static bool game_paused = false;
     Rigidbody2D m_Rigidbody;
     public float m_Speed = 5f;
@@ -32,10 +31,7 @@ public class PlayerStats : MonoBehaviour
             PlayerMovement();
         }
 
-        if (playerHP <= 0.00)
-        {
-            DeathTrigger();
-        }
+
 
     }
 
@@ -44,24 +40,6 @@ public class PlayerStats : MonoBehaviour
 
         Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         m_Rigidbody.MovePosition(transform.position + m_Input * Time.deltaTime * m_Speed);
-    }
-
-
-    public void TakeDamage(float damage)
-    {
-        playerHP = playerHP - damage;
-    }
-
-    public void DealDamage(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            GameObject collided = collision.gameObject;
-            //collided.GetComponent<HPScript>.TakeDamage(playerDamage);
-
-        }
-
-
     }
 
     public void activate_pausemenu()
@@ -84,7 +62,7 @@ public class PlayerStats : MonoBehaviour
         int moveSpeedUpgrade = 0;
 
         //actually upgradeing player stats
-        playerHP *= hpUpgrade;
+        //playerHP *= hpUpgrade;                                ///////////////////////////////////
         PlayerDamage *= damageUpgrade;
         m_Speed = m_Speed + moveSpeedUpgrade;
     }
