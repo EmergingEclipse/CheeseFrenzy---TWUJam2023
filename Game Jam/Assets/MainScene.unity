@@ -398,7 +398,7 @@ MonoBehaviour:
   damageUpgrade: 0
   mouseUpgrade: 0
   deathPanel: {fileID: 1947946998}
-  playerHP: 0
+  playerHP: 100
   m_Speed: 5
   PlayerDamage: 15
 --- !u!1 &292903364
