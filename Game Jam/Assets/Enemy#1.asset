@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Enemy#1
   m_EditorClassIdentifier: 
   hp: 25
-  damage: 5
+  damage: 15
   speed: 1.5

@@ -19,6 +19,11 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(spawnEnemy(enemy1Interval, enemy1));
         StartCoroutine(spawnEnemy(enemy2Interval, enemy2));
     }
+    public void deathEnemyFixer()
+    {
+        StopCoroutine(spawnEnemy(enemy1Interval, enemy1));
+        StopCoroutine(spawnEnemy(enemy2Interval, enemy2));
+    }
 
     private IEnumerator spawnEnemy(float interval, GameObject enemy)
     {

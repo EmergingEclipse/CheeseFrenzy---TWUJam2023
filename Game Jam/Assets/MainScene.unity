@@ -902,7 +902,7 @@ GameObject:
   - component: {fileID: 1537682960}
   m_Layer: 0
   m_Name: EnemySpawnHolder
-  m_TagString: Untagged
+  m_TagString: Spawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1267,8 +1267,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.4564819, y: -2.0925903}
+  m_SizeDelta: {x: 14.8978, y: 16.1701}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947947000
 MonoBehaviour:
@@ -1357,6 +1357,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2662957284032132416, guid: d2b6ce2bd3d134e40b6ee362f59e49ee, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2662957284032132417, guid: d2b6ce2bd3d134e40b6ee362f59e49ee, type: 3}
+      propertyPath: damage
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2662957284032132418, guid: d2b6ce2bd3d134e40b6ee362f59e49ee, type: 3}

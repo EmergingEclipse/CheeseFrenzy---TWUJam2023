@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    [SerializeField] private int damage = 5;
-    [SerializeField] private float speed = 1.5f;
+    private int damage;
+    private float speed;
 
     [SerializeField] private EnemyData data;
 
@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetEnemyValues();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 

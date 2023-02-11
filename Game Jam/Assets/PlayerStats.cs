@@ -53,7 +53,16 @@ public class PlayerStats : MonoBehaviour
         //saving the permanent upgrades after death
         PlayerPrefs.SetInt("hpUpgrade", hpUpgrade);
         PlayerPrefs.SetInt("damageUpgrade", hpUpgrade);
+
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+            GameObject.Destroy(enemy);
+
+
         deathPanel.SetActive(true);
+        GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
+        GameObject.Destroy(spawner);
+
     }
 
     public void Upgrades()
