@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-
+    public int MAX_HEALTH;
     [SerializeField] private int health = 100;
 
-    private int MAX_HEALTH = 100;
 
 
+    void start()
+    {
+        MAX_HEALTH = GetComponent<UpgradeMenu>().GetMaxHP();
+    }
     // Update is called once per frame
     void Update()
     {

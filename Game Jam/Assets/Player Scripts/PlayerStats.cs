@@ -13,8 +13,8 @@ public class PlayerStats : MonoBehaviour
     public static bool game_paused = false;
     Rigidbody2D m_Rigidbody;
     public float m_Speed = 5f;
-    [SerializeField] private float PlayerDamage = 15;
-    // Start is called before the first frame update
+
+
 
     private Animator anim;
 
@@ -50,14 +50,17 @@ public class PlayerStats : MonoBehaviour
     public void activate_pausemenu()
     {
         game_paused = true;
+        Time.timeScale = 0;
+    }
+    public void Deactivate_PauseMenu()
+    {
+        game_paused = false;
+        Time.timeScale = 1;
     }
 
     public void DeathTrigger()
     {
         activate_pausemenu();
-        //saving the permanent upgrades after death
-        PlayerPrefs.SetInt("hpUpgrade", hpUpgrade);
-        PlayerPrefs.SetInt("damageUpgrade", hpUpgrade);
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
@@ -70,31 +73,12 @@ public class PlayerStats : MonoBehaviour
 
     }
 
-    public void Upgrades()
-    {
-        //Temporary Upgrades
-        int moveSpeedUpgrade = 0;
 
-        //actually upgradeing player stats
-        //playerHP *= hpUpgrade;                                ///////////////////////////////////
-        PlayerDamage *= damageUpgrade;
-        m_Speed = m_Speed + moveSpeedUpgrade;
-    }
 
     //creates all of the base upgrades on initial runtime so upgrades will work
     public void RunTimeData()
     {
-        if (PlayerPrefs.GetInt("firstTime") == null)
-        {
-            PlayerPrefs.SetInt("firstTime", 0);
-            PlayerPrefs.SetInt("hpUpgrade", 1);
-            PlayerPrefs.SetInt("damageUpgrade", 1);
-            PlayerPrefs.SetInt("mouseUpgrade", 0);
-        }
-
-        hpUpgrade = PlayerPrefs.GetInt("hpUpgrade");
-        damageUpgrade = PlayerPrefs.GetInt("damageUpgrade");
-        mouseUpgrade = PlayerPrefs.GetInt("mouseUpgrade");
+        m_Speed = GetComponent<UpgradeMenu>().GetSpeed();
 
 
     }
