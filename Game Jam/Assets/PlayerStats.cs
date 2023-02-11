@@ -8,7 +8,6 @@ public class PlayerStats : MonoBehaviour
     public int damageUpgrade;
     public int mouseUpgrade;
 
-
     public GameObject deathPanel;
     public static bool game_paused = false;
     Rigidbody2D m_Rigidbody;
@@ -16,9 +15,12 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float PlayerDamage = 15;
     // Start is called before the first frame update
 
+    private Animator anim;
+
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
     void FixedUpdate()
     {
@@ -39,6 +41,8 @@ public class PlayerStats : MonoBehaviour
     {
 
         Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
+        anim.SetFloat("moveX", m_Input.x);
+        anim.SetFloat("moveY", m_Input.y);
         m_Rigidbody.MovePosition(transform.position + m_Input * Time.deltaTime * m_Speed);
     }
 
