@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public int hpUpgrade;
-    public int damageUpgrade;
-    public int mouseUpgrade;
-
 
     public GameObject deathPanel;
     public static bool game_paused = false;
@@ -15,11 +11,11 @@ public class PlayerStats : MonoBehaviour
     public float m_Speed = 5f;
 
 
-
     private Animator anim;
 
     void Start()
     {
+        RunTimeData();
         m_Rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
