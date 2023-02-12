@@ -51,7 +51,7 @@ public class Enemy : MonoBehaviour
             if (collider.GetComponent<PlayerStats>() != null)
             {
                 collider.GetComponent<Health>().Damage(damage);
-                this.GetComponent<Health>().Damage(10000);
+                GetComponent<Health>().Damage(10000);
 
             }
         }
