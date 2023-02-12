@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     private int damage;
     private float speed;
     private float value;
+    private Animator anim;
 
     [SerializeField] private EnemyData data;
 
@@ -17,6 +18,7 @@ public class Enemy : MonoBehaviour
     {
         SetEnemyValues();
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,18 @@ public class Enemy : MonoBehaviour
 
     private void follow()
     {
+        Vector3 pp = player.transform.position;
+        Vector3 ep = transform.position;
+        if (GetDominantDist(pp, ep) == 0)
+        {
+            if (pp.x - ep.x > 0) { anim.SetFloat("moveX", 1.0f); }
+            else { anim.SetFloat("moveY", -1.0f); }
+        }
+        else if (GetDominantDist(pp, ep) == 1)
+        {
+            if (pp.y - ep.y > 0) { anim.SetFloat("moveY", 1.0f); }
+            else { anim.SetFloat("moveY", -1.0f); }
+        }
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
@@ -53,5 +67,13 @@ public class Enemy : MonoBehaviour
         damage = data.damage;
         speed = data.speed;
         value = data.value;
+    }
+
+    private int GetDominantDist(Vector3 a, Vector3 b)
+    {
+        float diffX = Mathf.Abs(Mathf.Abs(a.x) - Mathf.Abs(b.x));
+        float diffY = Mathf.Abs(Mathf.Abs(a.y) - Mathf.Abs(b.y));
+        if (diffX >= diffY) { return 0; }
+        else { return 1; }
     }
 }
