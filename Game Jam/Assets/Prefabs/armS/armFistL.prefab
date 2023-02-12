@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1427571261525642031}
   - component: {fileID: 3809726075629193078}
+  - component: {fileID: -3948878819761560841}
   m_Layer: 0
   m_Name: armFistL
   m_TagString: Arm
@@ -84,3 +85,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-3948878819761560841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549943309205012507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d799a7f0dcf4f42b91156e7af12692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0
+  knockback: 0
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []

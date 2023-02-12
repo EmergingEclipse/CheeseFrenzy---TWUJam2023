@@ -40,6 +40,7 @@ public class Attacks : MonoBehaviour
         cheeseWheel();
         punch();
         slap();
+        spawnMusk(musk);
     }
 
 
@@ -75,8 +76,9 @@ public class Attacks : MonoBehaviour
     {
         if (playerupgrades.PunchChecker() && punchCounter == 0)
         {
-            StartCoroutine(spawnFist(fistL, fistR));
             punchCounter = 1;
+            StartCoroutine(spawnFist(fistL, fistR));
+
         }
     }
 
@@ -93,16 +95,20 @@ public class Attacks : MonoBehaviour
             //Left
             //Animator a = newFist.GetComponent<Animator>();
             //a.Play("punch");
+            newFist.transform.parent = gameObject.transform;
+            side = 1;
 
             StartCoroutine(spawnFist(fistL, fistR));
-            side = 1;
+
         }
         else
         {
             GameObject newFist = Instantiate(fistR, new Vector3(player.transform.position.x + .75f, player.transform.position.y, player.transform.position.z), Quaternion.Euler(0, 0, -90));
             //right
-            StartCoroutine(spawnFist(fistL, fistR));
+            newFist.transform.parent = gameObject.transform;
             side = 0;
+            StartCoroutine(spawnFist(fistL, fistR));
+
         }
     }
 
@@ -110,8 +116,9 @@ public class Attacks : MonoBehaviour
     {
         if (playerupgrades.SlapChecker() && slapCounter == 0)
         {
-            StartCoroutine(spawnSlap(2.5f, slapL, slapR));
             slapCounter = 1;
+            StartCoroutine(spawnSlap(2.5f, slapL, slapR));
+
         }
     }
 
@@ -125,17 +132,33 @@ public class Attacks : MonoBehaviour
         if (side == 0)
         {
             //Left
-            GameObject newslap = Instantiate(slapR, new Vector3(player.transform.position.x + .5f, player.transform.position.y, player.transform.position.z), Quaternion.identity);
-            StartCoroutine(spawnWheel(interval, slapL));
+            GameObject newslap = Instantiate(slapR, new Vector3(player.transform.position.x, player.transform.position.y + .3f, player.transform.position.z), Quaternion.identity);
+            newslap.transform.parent = gameObject.transform;
             side = 1;
+            StartCoroutine(spawnSlap(interval, slapL, slapR));
+
         }
         else
         {
-            GameObject newslap = Instantiate(slapL, new Vector3(player.transform.position.x - .5f, player.transform.position.y, player.transform.position.z), Quaternion.identity);
+            GameObject newslap = Instantiate(slapL, new Vector3(player.transform.position.x, player.transform.position.y - .3f, player.transform.position.z), Quaternion.identity);
             //right
-            StartCoroutine(spawnWheel(interval, slapR));
+            newslap.transform.parent = gameObject.transform;
             side = 0;
+            StartCoroutine(spawnSlap(interval, slapL, slapR));
+
         }
+    }
+    private void spawnMusk(GameObject Musk)
+    {
+        if (playerupgrades.MuskChecker() && muskCounter == 0)
+        {
+            muskCounter = 1;
+            GameObject musk = Instantiate(Musk, new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z), Quaternion.identity);
+            musk.transform.parent = gameObject.transform;
+
+        }
+
+
     }
 
 

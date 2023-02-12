@@ -1009,6 +1009,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1642652688}
     - target: {fileID: 2117665131, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
+      propertyPath: MuskActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2117665131, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: SlapActive
       value: 1
       objectReference: {fileID: 0}
@@ -1039,7 +1043,7 @@ PrefabInstance:
     - target: {fileID: 2117665139, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: fistL
       value: 
-      objectReference: {fileID: 6756703670056719669, guid: fea59a3ca83e11c4dba4ef39a4f59e9b, type: 3}
+      objectReference: {fileID: 4549943309205012507, guid: 878d06c0832d5b348a5d67e7f79f6927, type: 3}
     - target: {fileID: 2117665139, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: fistR
       value: 
@@ -1047,7 +1051,7 @@ PrefabInstance:
     - target: {fileID: 2117665139, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: slapL
       value: 
-      objectReference: {fileID: 7919254201841245086, guid: 3c03b05eeb926ec4ba3f2f416b8e19f4, type: 3}
+      objectReference: {fileID: 2455280363143515516, guid: a7955f848eac0f04c8594c9ad2a0d53c, type: 3}
     - target: {fileID: 2117665139, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: slapR
       value: 
@@ -1115,6 +1119,10 @@ PrefabInstance:
     - target: {fileID: 5785854831700278591, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5785854831700278592, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5785854831700278595, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: m_Name

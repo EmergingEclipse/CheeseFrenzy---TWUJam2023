@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8599227382141776777}
   - component: {fileID: 8843692160441052079}
   - component: {fileID: 7348481286837879814}
+  - component: {fileID: 3871513598803123065}
   m_Layer: 0
   m_Name: armSlapL
   m_TagString: Arm
@@ -25,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2455280363143515516}
-  m_LocalRotation: {x: -0, y: -0, z: 0.5611706, w: 0.82770026}
+  m_LocalRotation: {x: -0, y: -0, z: 0.89905244, w: -0.4378409}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 68.274}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 231.932}
 --- !u!212 &8843692160441052079
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -105,3 +106,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3871513598803123065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2455280363143515516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd46a50a36c2fdf40a5d125f3019d4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0
+  knockbackbuff: 0
+  knockback: 0
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []
