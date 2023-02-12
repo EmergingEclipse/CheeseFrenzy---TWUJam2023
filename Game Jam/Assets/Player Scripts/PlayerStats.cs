@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-
+    public GameObject UpgradePanel;
     public GameObject deathPanel;
     public static bool game_paused = false;
     Rigidbody2D m_Rigidbody;
@@ -15,6 +16,8 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
+        UpgradePanel.SetActive(true);
+        UpgradePanel.SetActive(false);
         RunTimeData();
         m_Rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
