@@ -41,6 +41,10 @@ public class Health : MonoBehaviour
         {
             this.GetComponent<PlayerStats>().DeathTrigger();
         }
+        if (this.gameObject.tag == "Enemy")
+        {
+            float Value = this.GetComponent<Enemy>().getValue();
+        }
         Destroy(gameObject);
     }
 

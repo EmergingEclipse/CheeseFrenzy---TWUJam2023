@@ -24,6 +24,12 @@ public class SpawnUpgradeTable : MonoBehaviour
     {
         yield return new WaitForSeconds(interval);
         GameObject newUpgradeTable = Instantiate(Table, new Vector3(Random.Range(-5f, 5f), Random.Range(-5f, 5f), 0), Quaternion.identity);
+        tagChanger(newUpgradeTable);
         StartCoroutine(spawnTable(interval, Table));
+    }
+
+    private void tagChanger(GameObject thing)
+    {
+        thing.tag = "Table";
     }
 }

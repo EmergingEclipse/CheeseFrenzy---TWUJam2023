@@ -15,6 +15,8 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private TMP_Text baseDamageCost;
     [SerializeField] private TMP_Text knockBackCost;
 
+    private float cheeseCurrency;
+
 
     public int CheeseWheelActive = 1;
     public int SlapActive = 0;
@@ -44,6 +46,31 @@ public class UpgradeMenu : MonoBehaviour
 
     #endregion
 
+    public List<string> CostGetter()
+    {
+        List<string> list = new List<string>();
+        list.Add(punchCost.text);
+        list.Add(slapCost.text);
+        list.Add(wheelCheeseCost.text);
+        list.Add(muskCost.text);
+        list.Add(speedCost.text);
+        list.Add(HPCost.text);
+        list.Add(baseDamageCost.text);
+        list.Add(knockBackCost.text);
+        return list;
+    }
+    public void currencyAdder(float amount)
+    {
+        cheeseCurrency += amount;
+    }
+    public void currencyRemover(float amount)
+    {
+        cheeseCurrency -= amount;
+    }
+    public float currencyChecker()
+    {
+        return cheeseCurrency;
+    }
     public bool cheeseChecker()
     {
         if (CheeseWheelActive == 1)
@@ -92,6 +119,19 @@ public class UpgradeMenu : MonoBehaviour
     void Start()
     {
 
+    }
+    public bool IsAbleToBuy(TMP_Text value)
+    {
+        float CostOfUpgrade = float.Parse(value.text);
+        float currentMoney = currencyChecker();
+        if (CostOfUpgrade > currentMoney)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     #region Upgrade Text Methods

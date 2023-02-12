@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 
     private int damage;
     private float speed;
+    private float value;
 
     [SerializeField] private EnemyData data;
 
@@ -41,11 +42,16 @@ public class Enemy : MonoBehaviour
             }
         }
     }
+    public float getValue()
+    {
+        return value;
+    }
 
     private void SetEnemyValues()
     {
         GetComponent<Health>().SetHealth(data.hp, data.hp);
         damage = data.damage;
         speed = data.speed;
+        value = data.value;
     }
 }
