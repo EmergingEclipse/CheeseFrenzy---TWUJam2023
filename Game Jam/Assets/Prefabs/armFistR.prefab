@@ -10,9 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8638499076219701395}
   - component: {fileID: 1708846923316006530}
-  - component: {fileID: 7505593351790587365}
-  - component: {fileID: 468587309480157848}
-  - component: {fileID: 2007152962565829713}
+  - component: {fileID: 6669287206587145438}
   m_Layer: 0
   m_Name: armFistR
   m_TagString: Arm
@@ -87,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7505593351790587365
+--- !u!95 &6669287206587145438
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
