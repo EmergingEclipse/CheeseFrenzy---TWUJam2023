@@ -16,11 +16,12 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        UpgradePanel.SetActive(true);
-        UpgradePanel.SetActive(false);
-        RunTimeData();
+
+
+
         m_Rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        RunTimeData();
     }
     void FixedUpdate()
     {
@@ -84,6 +85,7 @@ public class PlayerStats : MonoBehaviour
     //creates all of the base upgrades on initial runtime so upgrades will work
     public void RunTimeData()
     {
+
         m_Speed = GetComponent<UpgradeMenu>().GetSpeed();
 
 
