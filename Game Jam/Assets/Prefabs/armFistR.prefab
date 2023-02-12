@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8638499076219701395}
   - component: {fileID: 1708846923316006530}
   - component: {fileID: 6669287206587145438}
+  - component: {fileID: 468587309480157848}
+  - component: {fileID: 2007152962565829713}
   m_Layer: 0
   m_Name: armFistR
   m_TagString: Arm
@@ -93,7 +95,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5060343226935246256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 724c65757eb32c84c93c467217f22ee7, type: 2}
   m_CullingMode: 0
