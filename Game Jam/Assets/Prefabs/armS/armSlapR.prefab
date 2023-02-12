@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3157506575952227638}
   - component: {fileID: 2641039734726746749}
   - component: {fileID: 6130352561874310518}
+  - component: {fileID: 2768584028422539378}
   m_Layer: 0
   m_Name: armSlapR
   m_TagString: Arm
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 5066872718327388477}
   m_LocalRotation: {x: -0, y: -0, z: -0.24165823, w: 0.9703614}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,3 +106,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2768584028422539378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066872718327388477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd46a50a36c2fdf40a5d125f3019d4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0
+  knockbackbuff: 0
+  knockback: 0
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []
