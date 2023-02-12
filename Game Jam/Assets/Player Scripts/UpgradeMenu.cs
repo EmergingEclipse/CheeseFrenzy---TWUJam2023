@@ -15,10 +15,12 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private TMP_Text baseDamageCost;
     [SerializeField] private TMP_Text knockBackCost;
 
+    private float cheeseCurrency;
+
 
     public int CheeseWheelActive = 0;
     public int SlapActive = 0;
-    public int PunchActive = 0;
+    public int PunchActive = 1;
     public int MuskActive = 0;
 
 
@@ -44,6 +46,31 @@ public class UpgradeMenu : MonoBehaviour
 
     #endregion
 
+    public List<string> CostGetter()
+    {
+        List<string> list = new List<string>();
+        list.Add(punchCost.text);
+        list.Add(slapCost.text);
+        list.Add(wheelCheeseCost.text);
+        list.Add(muskCost.text);
+        list.Add(speedCost.text);
+        list.Add(HPCost.text);
+        list.Add(baseDamageCost.text);
+        list.Add(knockBackCost.text);
+        return list;
+    }
+    public void currencyAdder(float amount)
+    {
+        cheeseCurrency += amount;
+    }
+    public void currencyRemover(float amount)
+    {
+        cheeseCurrency -= amount;
+    }
+    public float currencyChecker()
+    {
+        return cheeseCurrency;
+    }
     public bool cheeseChecker()
     {
         if (CheeseWheelActive == 1)
@@ -91,47 +118,86 @@ public class UpgradeMenu : MonoBehaviour
 
     void Start()
     {
+        punchDamage = 10;
+        punchFrequency = 1.5f;
+        slapPower = 1;
+        slapDamage = 5;
 
+        cheeseBounceCount = 3;
+        cheeseDamage = 10;
+        muskRange = 2;
+        muskDamage = 5;
+    }
+    public bool IsAbleToBuy(TMP_Text value)
+    {
+        float CostOfUpgrade = float.Parse(value.text);
+        float currentMoney = currencyChecker();
+        if (CostOfUpgrade > currentMoney)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
     }
 
     #region Upgrade Text Methods
     public void UpgradePunchText()
     {
+        float amount = float.Parse(punchCost.text);
+        currencyRemover(amount);
         punchCost.text = (float.Parse(punchCost.text) * 1.75f).ToString();
         SetPunch();
     }
     public void UpgradeSlapText()
     {
+        float amount = float.Parse(slapCost.text);
+        currencyRemover(amount);
         slapCost.text = (float.Parse(slapCost.text) * 1.75f).ToString();
         SetSlap();
     }
     public void UpgradeWheelText()
     {
+        float amount = float.Parse(wheelCheeseCost.text);
+        currencyRemover(amount);
         wheelCheeseCost.text = (float.Parse(wheelCheeseCost.text) * 1.75f).ToString();
         SetCheese();
     }
     public void UpgradeMuskText()
     {
+
+        float amount = float.Parse(muskCost.text);
+        currencyRemover(amount);
         muskCost.text = (float.Parse(muskCost.text) * 1.75f).ToString();
         SetMusk();
     }
     public void UpgradeSpeedText()
     {
+
+        float amount = float.Parse(speedCost.text);
+        currencyRemover(amount);
         muskCost.text = (float.Parse(speedCost.text) * 1.75f).ToString();
         SetSpeed();
     }
     public void UpgradeHPText()
     {
+        float amount = float.Parse(HPCost.text);
+        currencyRemover(amount);
         HPCost.text = (float.Parse(HPCost.text) * 1.75f).ToString();
         SetMaxHP();
     }
     public void UpgradeBaseDamageText()
     {
+        float amount = float.Parse(baseDamageCost.text);
+        currencyRemover(amount);
         baseDamageCost.text = (float.Parse(baseDamageCost.text) * 1.75f).ToString();
         SetBaseDamage();
     }
     public void UpgradeKnockBackText()
     {
+        float amount = float.Parse(knockBackCost.text);
+        currencyRemover(amount);
         knockBackCost.text = (float.Parse(knockBackCost.text) * 1.75f).ToString();
         SetKnockBack();
     }
@@ -184,7 +250,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         return (cheeseDamage);
     }
-    public float GetCheeseBounceCount()
+    public int GetCheeseBounceCount()
     {
         return (cheeseBounceCount);
     }

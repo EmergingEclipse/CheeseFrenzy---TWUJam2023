@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 5785854831700278588}
   - component: {fileID: 2117665131}
   - component: {fileID: 2117665139}
+  - component: {fileID: 8193489919351436682}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -271,6 +272,10 @@ MonoBehaviour:
   HPCost: {fileID: 0}
   baseDamageCost: {fileID: 0}
   knockBackCost: {fileID: 0}
+  CheeseWheelActive: 1
+  SlapActive: 0
+  PunchActive: 0
+  MuskActive: 0
 --- !u!114 &2117665139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,3 +288,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00edbf0f5cf3cc24cbccad624c404b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wheel: {fileID: 0}
+  player: {fileID: 0}
+  playerupgrades: {fileID: 0}
+  cheeseCounter: 0
+--- !u!114 &8193489919351436682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785854831700278595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8883198a619916c4f88de99bf79ff35f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Table: {fileID: 0}

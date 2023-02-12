@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-
+    public GameObject UpgradePanel;
     public GameObject deathPanel;
     public static bool game_paused = false;
     Rigidbody2D m_Rigidbody;
@@ -15,9 +16,12 @@ public class PlayerStats : MonoBehaviour
 
     void Start()
     {
-        RunTimeData();
+
+
+
         m_Rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        RunTimeData();
     }
     void FixedUpdate()
     {
@@ -81,6 +85,7 @@ public class PlayerStats : MonoBehaviour
     //creates all of the base upgrades on initial runtime so upgrades will work
     public void RunTimeData()
     {
+
         m_Speed = GetComponent<UpgradeMenu>().GetSpeed();
 
 
