@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22437c6430fdb974daf7501e1907432b, type: 3}
-  m_Name: Cat
+  m_Name: Rat 1
   m_EditorClassIdentifier: 
-  hp: 1500
-  damage: 15
-  speed: 10
+  hp: 20
+  damage: 5
+  speed: 2
+  value: 2

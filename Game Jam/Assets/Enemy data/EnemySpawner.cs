@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-
+    public int Count = 1;
 
     [SerializeField] private GameObject RatWave1;
     private float rat1Interval = 7f;
@@ -34,53 +34,54 @@ public class EnemySpawner : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void FixedUpdate()
+    void Update()
     {
-        int Count = 1;
-        if ((Time.deltaTime > 0 && Count == 1))
+
+        if ((Time.timeSinceLevelLoad > 0 && Count == 1))
         {
             StartCoroutine(spawnEnemy(rat1Interval, RatWave1));
             StartCoroutine(spawnEnemy(Hazmat1Interval, HazmatWave1));
+            Debug.Log("First Wave");
             Count += 1;
         }
-        if ((Time.deltaTime > 90 && Count == 2))
+        if ((Time.timeSinceLevelLoad > 90 && Count == 2))
         {
             StartCoroutine(spawnEnemy(rat2Interval, RatWave2));
             Count += 1;
-
+            Debug.Log("Second Wave");
         }
-        if ((Time.deltaTime > 180 && Count == 3))
+        if ((Time.timeSinceLevelLoad > 180 && Count == 3))
         {
             StartCoroutine(spawnEnemy(rat2Interval, RatWave3));
             StartCoroutine(spawnEnemy(rat5Interval, RatWave1));
             Count += 1;
 
         }
-        if ((Time.deltaTime > 300 && Count == 4))
+        if ((Time.timeSinceLevelLoad > 300 && Count == 4))
         {
             StartCoroutine(spawnEnemy(Cat1Interval, CatWave1));
             StartCoroutine(spawnEnemy(Hazmat2Interval, HazmatWave2));
             Count += 1;
         }
-        if ((Time.deltaTime > 420 && Count == 5))
+        if ((Time.timeSinceLevelLoad > 420 && Count == 5))
         {
             StartCoroutine(spawnEnemy(rat5Interval, RatWave3));
             StartCoroutine(spawnEnemy(Hazmat3Interval, HazmatWave1));
             Count += 1;
         }
-        if ((Time.deltaTime > 500 && Count == 6))
+        if ((Time.timeSinceLevelLoad > 500 && Count == 6))
         {
             StartCoroutine(spawnEnemy(rat5Interval, RatWave5));
             StartCoroutine(spawnEnemy(Hazmat1Interval, HazmatWave1));
             Count += 1;
         }
-        if ((Time.deltaTime > 600 && Count == 7))
+        if ((Time.timeSinceLevelLoad > 550 && Count == 7))
         {
             StartCoroutine(spawnEnemy(Cat1Interval, CatWave2));
             StartCoroutine(spawnEnemy(Hazmat2Interval, HazmatWave2));
             Count += 1;
         }
-        if ((Time.deltaTime > 600 && Count == 8))
+        if ((Time.timeSinceLevelLoad > 600 && Count == 8))
         {
             StartCoroutine(spawnEnemy(Cat1Interval, CatWave2));
             StartCoroutine(spawnEnemy(Hazmat2Interval, HazmatWave2));
