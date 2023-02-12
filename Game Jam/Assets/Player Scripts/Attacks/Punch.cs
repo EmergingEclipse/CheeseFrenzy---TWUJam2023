@@ -12,7 +12,7 @@ public class Punch : MonoBehaviour
     private float delay = 0.15f;
     Rigidbody2D rb;
 
-    public UnityEvent OnBegin, OnDone;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +30,7 @@ public class Punch : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Hit!");
         if (collision.GetComponent<Health>() != null && collision.tag == "Enemy")
         {
 
@@ -37,40 +38,9 @@ public class Punch : MonoBehaviour
             Health health = collision.GetComponent<Health>();
             health.Damage(Damage);
             GameObject enemy = collision.gameObject;
-            PlayFeedback(enemy);
             Debug.Log(Damage);
 
         }
-
-    }
-    public void PlayFeedback(GameObject sender)
-    {
-        StopCoroutine(Reset());
-        OnBegin?.Invoke();
-        Vector2 direction = (transform.position - sender.transform.position).normalized;
-        try
-        {
-            rb.AddForce(direction * knockback, ForceMode2D.Impulse);
-        }
-        catch
-        {
-
-        }
-        StartCoroutine(Reset());
-
-    }
-    private IEnumerator Reset()
-    {
-        yield return new WaitForSeconds(delay);
-        try
-        {
-            rb.velocity = Vector3.zero;
-        }
-        catch
-        {
-
-        }
-        OnDone?.Invoke();
 
     }
 

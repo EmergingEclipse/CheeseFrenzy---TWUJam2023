@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1427571261525642031}
   - component: {fileID: 3809726075629193078}
   - component: {fileID: -3948878819761560841}
+  - component: {fileID: 6042597552922928755}
   m_Layer: 0
   m_Name: armFistL
   m_TagString: Arm
@@ -105,3 +106,19 @@ MonoBehaviour:
   OnDone:
     m_PersistentCalls:
       m_Calls: []
+--- !u!70 &6042597552922928755
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4549943309205012507}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.03754106, y: 0.6900846}
+  m_Size: {x: 0.62554103, y: 2}
+  m_Direction: 0

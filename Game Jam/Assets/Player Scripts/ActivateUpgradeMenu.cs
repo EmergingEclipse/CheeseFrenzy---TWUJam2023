@@ -65,7 +65,7 @@ public class ActivateUpgradeMenu : MonoBehaviour
 
         for (int i = 0; i < 8; i++)
         {
-            Debug.Log(i);
+
             string tempStr = list[i];
             float tempNum = float.Parse(tempStr);
             if (i == 0)

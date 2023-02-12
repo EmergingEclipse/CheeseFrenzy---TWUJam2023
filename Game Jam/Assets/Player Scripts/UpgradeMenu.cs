@@ -15,7 +15,7 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private TMP_Text baseDamageCost;
     [SerializeField] private TMP_Text knockBackCost;
 
-    private float cheeseCurrency;
+    private float cheeseCurrency = 10000;
 
 
     public int CheeseWheelActive = 0;
@@ -43,6 +43,10 @@ public class UpgradeMenu : MonoBehaviour
     private int nowHP;
 
     private float nowSpeed;
+
+    private ActivateUpgradeMenu ButtonUpdater;
+
+    public GameObject Table;
 
     #endregion
 
@@ -127,6 +131,7 @@ public class UpgradeMenu : MonoBehaviour
         cheeseDamage = 10;
         muskRange = 2;
         muskDamage = 5;
+        ButtonUpdater = Table.GetComponent<ActivateUpgradeMenu>();
     }
     public bool IsAbleToBuy(TMP_Text value)
     {
@@ -148,6 +153,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(punchCost.text);
         currencyRemover(amount);
         punchCost.text = (float.Parse(punchCost.text) * 1.75f).ToString();
+        ButtonUpdater.ButtonChecker();
         SetPunch();
     }
     public void UpgradeSlapText()
@@ -155,6 +161,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(slapCost.text);
         currencyRemover(amount);
         slapCost.text = (float.Parse(slapCost.text) * 1.75f).ToString();
+        ButtonUpdater.ButtonChecker();
         SetSlap();
     }
     public void UpgradeWheelText()
@@ -162,6 +169,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(wheelCheeseCost.text);
         currencyRemover(amount);
         wheelCheeseCost.text = (float.Parse(wheelCheeseCost.text) * 1.75f).ToString();
+        ButtonUpdater.ButtonChecker();
         SetCheese();
     }
     public void UpgradeMuskText()
@@ -170,6 +178,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(muskCost.text);
         currencyRemover(amount);
         muskCost.text = (float.Parse(muskCost.text) * 1.75f).ToString();
+        ButtonUpdater.ButtonChecker();
         SetMusk();
     }
     public void UpgradeSpeedText()
@@ -178,6 +187,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(speedCost.text);
         currencyRemover(amount);
         muskCost.text = (float.Parse(speedCost.text) * 1.75f).ToString();
+        ButtonUpdater.ButtonChecker();
         SetSpeed();
     }
     public void UpgradeHPText()
@@ -185,6 +195,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(HPCost.text);
         currencyRemover(amount);
         HPCost.text = (float.Parse(HPCost.text) * 1.75f).ToString();
+        ButtonUpdater.ButtonChecker();
         SetMaxHP();
     }
     public void UpgradeBaseDamageText()
@@ -192,6 +203,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(baseDamageCost.text);
         currencyRemover(amount);
         baseDamageCost.text = (float.Parse(baseDamageCost.text) * 1.75f).ToString();
+        ButtonUpdater.ButtonChecker();
         SetBaseDamage();
     }
     public void UpgradeKnockBackText()
@@ -199,6 +211,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(knockBackCost.text);
         currencyRemover(amount);
         knockBackCost.text = (float.Parse(knockBackCost.text) * 1.75f).ToString();
+        ButtonUpdater.ButtonChecker();
         SetKnockBack();
     }
 
@@ -225,7 +238,7 @@ public class UpgradeMenu : MonoBehaviour
         baseDamage = GetBaseDamage();
         slapPower = (slapPower * 1.15f);
         slapDamage = slapDamage + baseDamage;
-        PunchActive = 1;
+        SlapActive = 1;
     }
     public int GetSlapDamage()
     {
@@ -284,12 +297,15 @@ public class UpgradeMenu : MonoBehaviour
         if (PlayerPrefs.HasKey("HPModifier"))
         {
             HPModifier = PlayerPrefs.GetInt("HPModifier");
-            PlayerPrefs.SetInt("HpModifier", HPModifier + 1);
-            HPModifier = PlayerPrefs.GetInt("HPModifier");
+            HPModifier += 1;
+            PlayerPrefs.SetInt("HPModifier", HPModifier);
+            Debug.Log(HPModifier);
+
         }
         else
         {
             PlayerPrefs.SetInt("HPModifier", 2);
+            Debug.Log("NoKeyFound");
         }
     }
     public int GetMaxHP()
@@ -299,11 +315,12 @@ public class UpgradeMenu : MonoBehaviour
         {
             HPModifier = PlayerPrefs.GetInt("HPModifier");
             nowHP = baseHP * HPModifier;
+            Debug.Log(nowHP);
             return (nowHP);
         }
         else
         {
-            PlayerPrefs.SetInt("HPModifier", 1);
+            PlayerPrefs.SetInt("HPModifier", 2);
             HPModifier = PlayerPrefs.GetInt("HPModifier");
             nowHP = baseHP * HPModifier;
             return (nowHP);

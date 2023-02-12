@@ -29,10 +29,11 @@ public class musk : MonoBehaviour
         foreach (GameObject enemy in enemies)
         {
             distance = Vector3.Distance(enemy.transform.position, playerTransform.position);
-            if (distance < playerstats.GetMuskRange())
+            if (distance < (playerstats.GetMuskRange() + .5f))
             {
                 Health health = enemy.GetComponent<Health>();
                 health.Damage(Damage);
+
             }
         }
     }

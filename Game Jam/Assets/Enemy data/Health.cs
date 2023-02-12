@@ -5,14 +5,15 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     private int MAX_HEALTH;
-    [SerializeField] private int health = 100;
+    [SerializeField] private int health;
 
 
 
     void start()
     {
-        MAX_HEALTH = GetComponent<UpgradeMenu>().GetMaxHP();
-        if (this.gameObject.tag == "Player")
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        MAX_HEALTH = player.GetComponent<UpgradeMenu>().GetMaxHP();
+        if (gameObject.tag == "Player")
         {
             health = MAX_HEALTH;
         }
