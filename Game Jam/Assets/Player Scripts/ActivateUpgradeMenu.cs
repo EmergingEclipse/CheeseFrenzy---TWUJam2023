@@ -159,7 +159,7 @@ public class ActivateUpgradeMenu : MonoBehaviour
                 }
                 else
                 {
-                    knockbackPurchase.interactable = true;
+                    //knockbackPurchase.interactable = true;
                 }
             }
 

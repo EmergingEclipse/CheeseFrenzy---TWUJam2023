@@ -4,21 +4,26 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private int MAX_HEALTH;
-    [SerializeField] private int health;
+    private int MAX_HEALTH = 100;
+    private int health = 100;
 
 
 
     void start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        MAX_HEALTH = player.GetComponent<UpgradeMenu>().GetMaxHP();
-        if (gameObject.tag == "Player")
-        {
-            health = MAX_HEALTH;
-        }
+        Debug.Log(MAX_HEALTH + "this");
+        PlayerHealthSetter();
 
 
+
+    }
+    public void PlayerHealthSetter()
+    {
+
+        MAX_HEALTH = GetComponent<UpgradeMenu>().GetMaxHP();
+
+        health = MAX_HEALTH;
 
     }
 

@@ -15,7 +15,7 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private TMP_Text baseDamageCost;
     [SerializeField] private TMP_Text knockBackCost;
 
-    private float cheeseCurrency = 10000;
+    private float cheeseCurrency = 0;
 
 
     public int CheeseWheelActive = 0;
@@ -47,7 +47,7 @@ public class UpgradeMenu : MonoBehaviour
     private ActivateUpgradeMenu ButtonUpdater;
 
     public GameObject Table;
-
+    private Health healthy;
     #endregion
 
     public List<string> CostGetter()
@@ -122,6 +122,7 @@ public class UpgradeMenu : MonoBehaviour
 
     void Start()
     {
+
         punchDamage = 10;
         punchFrequency = 1.5f;
         slapPower = 1;
@@ -132,6 +133,11 @@ public class UpgradeMenu : MonoBehaviour
         muskRange = 2;
         muskDamage = 5;
         ButtonUpdater = Table.GetComponent<ActivateUpgradeMenu>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        healthy = player.GetComponent<Health>();
+        healthy.PlayerHealthSetter();
+        continuedCostUpgrades();
+
     }
     public bool IsAbleToBuy(TMP_Text value)
     {
@@ -145,6 +151,20 @@ public class UpgradeMenu : MonoBehaviour
         {
             return true;
         }
+    }
+    public void initialUpgradeCost()
+    {
+        PlayerPrefs.SetFloat("SpeedModifierCost", 100);
+        PlayerPrefs.SetFloat("HPModifierCost", 150);
+        PlayerPrefs.SetFloat("KnockBackModifierCost", 100);
+        PlayerPrefs.SetFloat("BaseDamageModifierCost", 150);
+    }
+    public void continuedCostUpgrades()
+    {
+        speedCost.text = PlayerPrefs.GetFloat("SpeedModifierCost").ToString();
+        HPCost.text = PlayerPrefs.GetFloat("HPModifierCost").ToString();
+        knockBackCost.text = PlayerPrefs.GetFloat("KnockBackModifierCost").ToString();
+        baseDamageCost.text = PlayerPrefs.GetFloat("BaseDamageModifierCost").ToString();
     }
 
     #region Upgrade Text Methods
@@ -183,10 +203,10 @@ public class UpgradeMenu : MonoBehaviour
     }
     public void UpgradeSpeedText()
     {
-
         float amount = float.Parse(speedCost.text);
         currencyRemover(amount);
-        muskCost.text = (float.Parse(speedCost.text) * 1.75f).ToString();
+        speedCost.text = (float.Parse(speedCost.text) * 1.75f).ToString();
+        PlayerPrefs.SetFloat("SpeedModifierCost", float.Parse(speedCost.text));
         ButtonUpdater.ButtonChecker();
         SetSpeed();
     }
@@ -195,6 +215,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(HPCost.text);
         currencyRemover(amount);
         HPCost.text = (float.Parse(HPCost.text) * 1.75f).ToString();
+        PlayerPrefs.SetFloat("HPModifierCost", float.Parse(HPCost.text));
         ButtonUpdater.ButtonChecker();
         SetMaxHP();
     }
@@ -203,6 +224,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(baseDamageCost.text);
         currencyRemover(amount);
         baseDamageCost.text = (float.Parse(baseDamageCost.text) * 1.75f).ToString();
+        PlayerPrefs.SetFloat("BaseDamageModifierCost", float.Parse(baseDamageCost.text));
         ButtonUpdater.ButtonChecker();
         SetBaseDamage();
     }
@@ -211,6 +233,7 @@ public class UpgradeMenu : MonoBehaviour
         float amount = float.Parse(knockBackCost.text);
         currencyRemover(amount);
         knockBackCost.text = (float.Parse(knockBackCost.text) * 1.75f).ToString();
+        PlayerPrefs.SetFloat("KnockBackModifierCost", float.Parse(knockBackCost.text));
         ButtonUpdater.ButtonChecker();
         SetKnockBack();
     }
