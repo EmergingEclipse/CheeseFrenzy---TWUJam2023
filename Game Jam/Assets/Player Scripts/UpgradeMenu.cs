@@ -15,6 +15,13 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private TMP_Text baseDamageCost;
     [SerializeField] private TMP_Text knockBackCost;
 
+
+    public int CheeseWheelActive = 0;
+    public int SlapActive = 0;
+    public int PunchActive = 0;
+    public int MuskActive = 0;
+
+
     #region Variables
     private int punchDamage = 10;
     private float punchFrequency;
@@ -37,7 +44,50 @@ public class UpgradeMenu : MonoBehaviour
 
     #endregion
 
-
+    public bool cheeseChecker()
+    {
+        if (CheeseWheelActive == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool PunchChecker()
+    {
+        if (PunchActive == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool SlapChecker()
+    {
+        if (SlapActive == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public bool MuskChecker()
+    {
+        if (MuskActive == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     void Start()
     {
@@ -94,6 +144,7 @@ public class UpgradeMenu : MonoBehaviour
         baseDamage = GetBaseDamage();
         int damageIncrease = baseDamage * 2;
         punchDamage = punchDamage + damageIncrease;
+        PunchActive = 1;
     }
     public int GetPunch()
     {
@@ -108,6 +159,7 @@ public class UpgradeMenu : MonoBehaviour
         baseDamage = GetBaseDamage();
         slapPower = (slapPower * 1.15f);
         slapDamage = slapDamage + baseDamage;
+        PunchActive = 1;
     }
     public int GetSlapDamage()
     {
@@ -125,6 +177,7 @@ public class UpgradeMenu : MonoBehaviour
         cheeseDamage = cheeseDamage + damageIncrease;
 
         cheeseBounceCount += 2;
+        CheeseWheelActive = 1;
 
     }
     public int GetCheeseDamage()
@@ -143,6 +196,7 @@ public class UpgradeMenu : MonoBehaviour
         muskDamage = muskDamage + damageIncrease;
 
         muskRange = (muskRange * 1.25f);
+        MuskActive = 1;
     }
 
     public float GetMuskRange()
