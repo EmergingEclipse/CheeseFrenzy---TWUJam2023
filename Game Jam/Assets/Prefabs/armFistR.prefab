@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 8638499076219701395}
   - component: {fileID: 1708846923316006530}
   - component: {fileID: 7505593351790587365}
+  - component: {fileID: 468587309480157848}
+  - component: {fileID: 2007152962565829713}
   m_Layer: 0
   m_Name: armFistR
   m_TagString: Arm
@@ -105,3 +107,39 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!70 &468587309480157848
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060343226935246256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.020611882, y: 0.8816962}
+  m_Size: {x: 0.72757494, y: 1.771924}
+  m_Direction: 0
+--- !u!114 &2007152962565829713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5060343226935246256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d799a7f0dcf4f42b91156e7af12692, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: 0
+  knockback: 0
+  OnBegin:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDone:
+    m_PersistentCalls:
+      m_Calls: []

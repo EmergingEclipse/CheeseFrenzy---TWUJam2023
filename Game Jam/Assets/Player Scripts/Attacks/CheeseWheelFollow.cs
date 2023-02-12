@@ -44,7 +44,7 @@ public class CheeseWheelFollow : MonoBehaviour
             health.Damage(damage);
             Debug.Log(damage);
         }
-        Debug.Log("miss");
+
     }
 
     private void follow()
