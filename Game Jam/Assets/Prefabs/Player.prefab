@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1373616206, guid: f838b22bd278fe74bb72c8f25407ca2f, type: 3}
+  m_Sprite: {fileID: 1080071370, guid: d03139a7ab6f4c849aff9a0ffa4dfe5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -178,7 +178,7 @@ Animator:
   m_GameObject: {fileID: 5785854831700278595}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6dc52d66f04831e43bea5dc2512e149c, type: 2}
+  m_Controller: {fileID: 9100000, guid: fd276688feb47e148999006c37c136b3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -237,8 +237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcb9c28f5edb7ea43b16a971331c8e47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UpgradePanel: {fileID: 0}
   deathPanel: {fileID: 0}
   m_Speed: 5
+  newController: {fileID: 9100000, guid: 6dc52d66f04831e43bea5dc2512e149c, type: 2}
+  newSprite: {fileID: 1373616206, guid: f838b22bd278fe74bb72c8f25407ca2f, type: 3}
 --- !u!114 &5785854831700278588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,10 +291,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00edbf0f5cf3cc24cbccad624c404b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fistL: {fileID: 0}
+  fistR: {fileID: 0}
+  slapL: {fileID: 0}
+  slapR: {fileID: 0}
+  musk: {fileID: 0}
   wheel: {fileID: 0}
   player: {fileID: 0}
   playerupgrades: {fileID: 0}
   cheeseCounter: 0
+  punchCounter: 0
+  slapCounter: 0
+  muskCounter: 0
+  side: 0
 --- !u!114 &8193489919351436682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,3 +317,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Table: {fileID: 0}
+  interval: 0

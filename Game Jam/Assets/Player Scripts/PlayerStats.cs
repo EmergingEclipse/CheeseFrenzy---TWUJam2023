@@ -11,8 +11,10 @@ public class PlayerStats : MonoBehaviour
     Rigidbody2D m_Rigidbody;
     public float m_Speed = 5f;
 
-
     private Animator anim;
+    [SerializeField] private RuntimeAnimatorController newController;
+    private SpriteRenderer spRend;
+    [SerializeField] private Sprite newSprite;
 
     void Start()
     {
@@ -21,6 +23,7 @@ public class PlayerStats : MonoBehaviour
 
         m_Rigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spRend = GetComponent<SpriteRenderer>();
         RunTimeData();
     }
     void FixedUpdate()
@@ -78,6 +81,12 @@ public class PlayerStats : MonoBehaviour
         GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
         GameObject.Destroy(spawner);
 
+    }
+
+    public void turnIntoMouse()
+    {
+        anim.runtimeAnimatorController = newController;
+        spRend.sprite = newSprite;
     }
 
 
