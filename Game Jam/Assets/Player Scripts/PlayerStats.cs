@@ -36,11 +36,18 @@ public class PlayerStats : MonoBehaviour
 
     private void PlayerMovement()
     {
-
         Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         m_Rigidbody.MovePosition(transform.position + m_Input * Time.deltaTime * m_Speed);
-        anim.SetFloat("moveX", m_Input.x);
-        anim.SetFloat("moveY", m_Input.y);
+        if (m_Input.x != 0 || m_Input.y != 0)
+        {
+            anim.SetFloat("moveX", m_Input.x);
+            anim.SetFloat("moveY", m_Input.y);
+            anim.Play("m_Move");
+        }
+        else
+        {
+            anim.Play("m_Idle");
+        }
     }
 
     public void activate_pausemenu()
