@@ -12,6 +12,25 @@ public class Health : MonoBehaviour
     void start()
     {
         MAX_HEALTH = GetComponent<UpgradeMenu>().GetMaxHP();
+        if (this.gameObject.tag == "Player")
+        {
+            health = MAX_HEALTH;
+        }
+
+
+
+    }
+
+    public int getHealth()
+    {
+        if (this.gameObject.tag == "Player")
+        {
+            return health;
+        }
+        else
+        {
+            return health;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -44,6 +63,8 @@ public class Health : MonoBehaviour
         if (this.gameObject.tag == "Enemy")
         {
             float Value = this.GetComponent<Enemy>().getValue();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player.GetComponent<UpgradeMenu>().currencyAdder(Value);
         }
         Destroy(gameObject);
     }

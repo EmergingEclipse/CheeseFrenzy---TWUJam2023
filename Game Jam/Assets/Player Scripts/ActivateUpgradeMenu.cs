@@ -41,7 +41,7 @@ public class ActivateUpgradeMenu : MonoBehaviour
         if ((distance < 2) && Input.GetKeyDown(KeyCode.E))
         {
             ButtonChecker();
-            Debug.Log("this is true");
+
             UpgradeUI.SetActive(true);
             Time.timeScale = 0;
         }
@@ -60,66 +60,106 @@ public class ActivateUpgradeMenu : MonoBehaviour
         float currency = UpgradeScript.currencyChecker();
         // punch,slap,wheel,musk,speed,Hp,Base,knockBack
         List<string> list;
+        Debug.Log(currency);
         list = UpgradeScript.CostGetter();
-        for (int i = 0; i > 7; i++)
+
+        for (int i = 0; i < 8; i++)
         {
+            Debug.Log(i);
             string tempStr = list[i];
             float tempNum = float.Parse(tempStr);
             if (i == 0)
             {
-                if (tempNum < currency)
+
+                if (tempNum > currency)
                 {
+                    Debug.Log("buttonfalse");
                     punchPurchase.interactable = false;
+                }
+                else
+                {
+                    Debug.Log("buttontrue");
+                    punchPurchase.interactable = true;
                 }
             }
 
             if (i == 1)
             {
-                if (tempNum < currency)
+                if (tempNum > currency)
                 {
+                    Debug.Log("buttonfalse");
                     slapPurchase.interactable = false;
+                }
+                else
+                {
+                    Debug.Log("buttontrue");
+                    slapPurchase.interactable = true;
                 }
             }
             if (i == 2)
             {
-                if (tempNum < currency)
+                if (tempNum > currency)
                 {
                     wheelPurchase.interactable = false;
+                }
+                else
+                {
+                    wheelPurchase.interactable = true;
                 }
             }
             if (i == 3)
             {
-                if (tempNum < currency)
+                if (tempNum > currency)
                 {
                     muskPurchase.interactable = false;
+                }
+                else
+                {
+                    muskPurchase.interactable = true;
                 }
             }
             if (i == 4)
             {
-                if (tempNum < currency)
+                if (tempNum > currency)
                 {
                     speedPurchase.interactable = false;
+                }
+                else
+                {
+                    speedPurchase.interactable = true;
                 }
             }
             if (i == 5)
             {
-                if (tempNum < currency)
+                if (tempNum > currency)
                 {
                     hpPurchase.interactable = false;
+                }
+                else
+                {
+                    hpPurchase.interactable = true;
                 }
             }
             if (i == 6)
             {
-                if (tempNum < currency)
+                if (tempNum > currency)
                 {
                     basePurchase.interactable = false;
+                }
+                else
+                {
+                    basePurchase.interactable = true;
                 }
             }
             if (i == 7)
             {
-                if (tempNum < currency)
+                if (tempNum > currency)
                 {
                     knockbackPurchase.interactable = false;
+                }
+                else
+                {
+                    knockbackPurchase.interactable = true;
                 }
             }
 

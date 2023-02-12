@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Leave table
+  m_text: Leave Table
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -178,7 +178,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.6937199, y: 0.282}
   m_AnchorMax: {x: 0.8693735, y: 0.81910896}
-  m_AnchoredPosition: {x: 0.7444458, y: -0.46588135}
+  m_AnchoredPosition: {x: 0.74438477, y: -0.46588135}
   m_SizeDelta: {x: -3.4310913, y: 1.1499023}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6837183557710559280
@@ -334,7 +334,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.16053309, y: 0.07149027}
   m_AnchorMax: {x: 0.42700002, y: 0.9221635}
-  m_AnchoredPosition: {x: 0.8300171, y: 1.5}
+  m_AnchoredPosition: {x: 0.8300781, y: 1.5}
   m_SizeDelta: {x: -7.419983, y: -0.7527008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6837183558787127530
@@ -472,7 +472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6837183559263130908
 RectTransform:
   m_ObjectHideFlags: 0
@@ -571,10 +571,10 @@ RectTransform:
   m_Father: {fileID: 6837183559263130908}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 118.03092, y: -193.20581}
-  m_SizeDelta: {x: 93.7382, y: 24.7884}
+  m_AnchorMin: {x: 0.5808815, y: 0.09}
+  m_AnchorMax: {x: 0.6845927, y: 0.14}
+  m_AnchoredPosition: {x: -0.46907806, y: -0.70581055}
+  m_SizeDelta: {x: 0.7381973, y: -0.21160889}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5399875463052827421
 CanvasRenderer:
@@ -959,7 +959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.19999695
+      value: -0.2000122
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -998,6 +998,18 @@ PrefabInstance:
     - target: {fileID: 388699030676195411, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -70
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.2924528
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.2924528
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.2924528
       objectReference: {fileID: 0}
     - target: {fileID: 623972230381549286, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_text
@@ -1405,7 +1417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.3999939
+      value: 0.4000244
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1437,6 +1449,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6837183557710559286}
     m_Modifications:
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 731050179310169593, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_text
       value: Cheese Wheel Upgrade
@@ -1820,7 +1844,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.8999939
+      value: 0.9000244
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1852,6 +1876,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6837183557710559286}
     m_Modifications:
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 731050179310169593, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_text
       value: KnockBack Upgrade
@@ -1976,6 +2012,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6837183557710559286}
     m_Modifications:
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 731050179310169593, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_text
       value: Base Damage Upgrade
@@ -2099,6 +2147,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6837183557710559286}
     m_Modifications:
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 731050179310169593, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_text
       value: Musk Rat Upgrade
@@ -2493,7 +2553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.047317505
+      value: 0.047302246
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2755,11 +2815,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.2099762
+      value: 0.20996094
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.3999939
+      value: 0.4000244
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3153,6 +3213,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6837183557710559286}
     m_Modifications:
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 731050179310169593, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_text
       value: Punch Upgrade
@@ -3277,6 +3349,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6837183557710559286}
     m_Modifications:
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 731050179310169593, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_text
       value: Slap Upgrade
@@ -3637,7 +3721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.8999939
+      value: 0.9000244
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3903,7 +3987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.449997
+      value: -1.4500122
       objectReference: {fileID: 0}
     - target: {fileID: 6404145851154066823, guid: 7e7e529ebf8099a4ca500db7cc736453, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3935,6 +4019,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6837183557710559286}
     m_Modifications:
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 0.29411766
+      objectReference: {fileID: 0}
+    - target: {fileID: 436265588587117782, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 0.29411766
+      objectReference: {fileID: 0}
     - target: {fileID: 731050179310169593, guid: 1441c500a93f50d4c970e88d6295809d, type: 3}
       propertyPath: m_text
       value: Health Upgrade
