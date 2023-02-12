@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6181532839959982084}
   - component: {fileID: 4416275643821099487}
   - component: {fileID: 244838354855160368}
+  - component: {fileID: 3827987685956046966}
   m_Layer: 0
   m_Name: hazmat
   m_TagString: Untagged
@@ -105,3 +106,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3827987685956046966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5085627654721654685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae309c0370392c746a9efc42fa7688ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: 0bd3b08a0b6368947818c84665fd23de, type: 2}
