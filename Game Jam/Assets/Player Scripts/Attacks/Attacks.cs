@@ -40,7 +40,6 @@ public class Attacks : MonoBehaviour
             }
         }
         cheeseWheel();
-        Debug.Log(cheeseCounter);
     }
 
 
@@ -52,7 +51,7 @@ public class Attacks : MonoBehaviour
 
     public void cheeseWheel()
     {
-        Debug.Log(playerupgrades.cheeseChecker());
+
         if (playerupgrades.cheeseChecker() && cheeseCounter == 0)
         {
             StartCoroutine(spawnWheel(2.5f, wheel));
