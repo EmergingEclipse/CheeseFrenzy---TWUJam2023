@@ -16,20 +16,20 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private TMP_Text knockBackCost;
 
     #region Variables
-    private int punchDamage;
+    private int punchDamage = 10;
     private float punchFrequency;
-    private float slapPower;
-    private int slapDamage;
+    private float slapPower = 1;
+    private int slapDamage = 5;
 
-    private int cheeseBounceCount;
-    private int cheeseDamage;
-    private float muskRange;
-    private float muskDamage;
+    private int cheeseBounceCount = 3;
+    private int cheeseDamage = 10;
+    private float muskRange = 2;
+    private float muskDamage = 5;
 
-    private int HPModifier;
-    private float speedModifier;
-    private int baseDamage;
-    private int knockBackBuff;
+    private int HPModifier = 1;
+    private float speedModifier = 1;
+    private int baseDamage = 10;
+    private int knockBackBuff = 1;
 
     private int nowHP;
 
