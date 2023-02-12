@@ -39,6 +39,7 @@ public class Attacks : MonoBehaviour
     {
         cheeseWheel();
         punch();
+        slap();
     }
 
 
@@ -88,20 +89,29 @@ public class Attacks : MonoBehaviour
 
         if (side == 0)
         {
-            GameObject newFist = Instantiate(fistL, new Vector3(player.transform.position.x - .5f, player.transform.position.y, player.transform.position.z), Quaternion.Euler(0, 0, 90));
+            GameObject newFist = Instantiate(fistL, new Vector3(player.transform.position.x - .75f, player.transform.position.y, player.transform.position.z), Quaternion.Euler(0, 0, 90));
             //Left
-            Animator a = newFist.GetComponent<Animator>();
-            a.Play("punch");
+            //Animator a = newFist.GetComponent<Animator>();
+            //a.Play("punch");
 
             StartCoroutine(spawnFist(fistL, fistR));
             side = 1;
         }
         else
         {
-            GameObject newFist = Instantiate(fistR, new Vector3(player.transform.position.x + .5f, player.transform.position.y, player.transform.position.z), Quaternion.Euler(0, 0, -90));
+            GameObject newFist = Instantiate(fistR, new Vector3(player.transform.position.x + .75f, player.transform.position.y, player.transform.position.z), Quaternion.Euler(0, 0, -90));
             //right
             StartCoroutine(spawnFist(fistL, fistR));
             side = 0;
+        }
+    }
+
+    public void slap()
+    {
+        if (playerupgrades.SlapChecker() && slapCounter == 0)
+        {
+            StartCoroutine(spawnSlap(2.5f, slapL, slapR));
+            slapCounter = 1;
         }
     }
 
