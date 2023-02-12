@@ -68,19 +68,19 @@ public class EnemySpawner : MonoBehaviour
             StartCoroutine(spawnEnemy(Hazmat3Interval, HazmatWave1));
             Count += 1;
         }
-        if ((Time.deltaTime > 500 && Count == 5))
+        if ((Time.deltaTime > 500 && Count == 6))
         {
             StartCoroutine(spawnEnemy(rat5Interval, RatWave5));
             StartCoroutine(spawnEnemy(Hazmat1Interval, HazmatWave1));
             Count += 1;
         }
-        if ((Time.deltaTime > 600 && Count == 6))
+        if ((Time.deltaTime > 600 && Count == 7))
         {
             StartCoroutine(spawnEnemy(Cat1Interval, CatWave2));
             StartCoroutine(spawnEnemy(Hazmat2Interval, HazmatWave2));
             Count += 1;
         }
-        if ((Time.deltaTime > 600 && Count == 6))
+        if ((Time.deltaTime > 600 && Count == 8))
         {
             StartCoroutine(spawnEnemy(Cat1Interval, CatWave2));
             StartCoroutine(spawnEnemy(Hazmat2Interval, HazmatWave2));
