@@ -13,7 +13,7 @@ public class Attacks : MonoBehaviour
 
     public Transform player;
     public UpgradeMenu playerupgrades;
-    int cheeseCounter = 0;
+    public int cheeseCounter = 0;
 
     void Start()
     {
@@ -40,6 +40,7 @@ public class Attacks : MonoBehaviour
             }
         }
         cheeseWheel();
+        Debug.Log(cheeseCounter);
     }
 
 
@@ -51,9 +52,10 @@ public class Attacks : MonoBehaviour
 
     public void cheeseWheel()
     {
+        Debug.Log(playerupgrades.cheeseChecker());
         if (playerupgrades.cheeseChecker() && cheeseCounter == 0)
         {
-            spawnWheel(2.5f, wheel);
+            StartCoroutine(spawnWheel(2.5f, wheel));
             cheeseCounter = 1;
         }
     }

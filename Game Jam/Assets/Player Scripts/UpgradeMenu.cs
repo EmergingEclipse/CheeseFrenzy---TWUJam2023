@@ -16,7 +16,7 @@ public class UpgradeMenu : MonoBehaviour
     [SerializeField] private TMP_Text knockBackCost;
 
 
-    public int CheeseWheelActive = 0;
+    public int CheeseWheelActive = 1;
     public int SlapActive = 0;
     public int PunchActive = 0;
     public int MuskActive = 0;
@@ -184,7 +184,7 @@ public class UpgradeMenu : MonoBehaviour
     {
         return (cheeseDamage);
     }
-    public float GetCheeseBounceCount()
+    public int GetCheeseBounceCount()
     {
         return (cheeseBounceCount);
     }
