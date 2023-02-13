@@ -7,9 +7,14 @@ public class PlayerStats : MonoBehaviour
 {
     public GameObject UpgradePanel;
     public GameObject deathPanel;
+
+    public GameObject UI;
     public static bool game_paused = false;
     Rigidbody2D m_Rigidbody;
     public float m_Speed = 5f;
+
+    public AudioSource musicPlayer;
+    public AudioClip death;
 
     private Animator anim;
     [SerializeField] private RuntimeAnimatorController newController;
@@ -25,6 +30,10 @@ public class PlayerStats : MonoBehaviour
         anim = GetComponent<Animator>();
         spRend = GetComponent<SpriteRenderer>();
         RunTimeData();
+        if (PlayerPrefs.GetInt("Mouse") == 1)
+        {
+            turnIntoMouse();
+        }
     }
     void FixedUpdate()
     {
@@ -71,6 +80,7 @@ public class PlayerStats : MonoBehaviour
     public void DeathTrigger()
     {
         activate_pausemenu();
+        musicChanger();
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject enemy in enemies)
@@ -80,7 +90,15 @@ public class PlayerStats : MonoBehaviour
         deathPanel.SetActive(true);
         GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
         GameObject.Destroy(spawner);
+        UI.SetActive(false);
 
+    }
+
+    public void musicChanger()
+    {
+        musicPlayer.clip = death;
+        musicPlayer.Play();
+        musicPlayer.loop = false;
     }
 
     public void turnIntoMouse()
