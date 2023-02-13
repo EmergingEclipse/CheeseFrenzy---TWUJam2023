@@ -58,17 +58,24 @@ public class MenuScript : MonoBehaviour
 
     public void UpdateTimerUI()
     {
-        //set timer UI
-        secondsCount += Time.deltaTime;
-        timerText.text = minuteCount + "m:" + (int)secondsCount + "s";
-        if (secondsCount >= 60)
+        try
         {
-            minuteCount++;
-            secondsCount = 0;
+            //set timer UI
+            secondsCount += Time.deltaTime;
+            timerText.text = minuteCount + "m:" + (int)secondsCount + "s";
+            if (secondsCount >= 60)
+            {
+                minuteCount++;
+                secondsCount = 0;
+            }
+            else if (minuteCount >= 60)
+            {
+                minuteCount = 0;
+            }
         }
-        else if (minuteCount >= 60)
+        catch
         {
-            minuteCount = 0;
+        
         }
     }
 
