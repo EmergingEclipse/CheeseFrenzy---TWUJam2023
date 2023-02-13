@@ -19,6 +19,9 @@ public class ActivateUpgradeMenu : MonoBehaviour
     [SerializeField] private Button knockbackPurchase;
     [SerializeField] private Button basePurchase;
 
+    [SerializeField] private AudioClip PostMouse;
+    [SerializeField] private AudioSource musicPlayer;
+
 
     public float distance;
     // Start is called before the first frame update
@@ -32,7 +35,14 @@ public class ActivateUpgradeMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector3.Distance(player.GetComponent<Transform>().position, this.gameObject.transform.position);
+        try
+        {
+            distance = Vector3.Distance(player.GetComponent<Transform>().position, this.gameObject.transform.position);
+        }
+        catch
+        {
+
+        }
         WindowOpen();
     }
 
@@ -44,6 +54,10 @@ public class ActivateUpgradeMenu : MonoBehaviour
 
             UpgradeUI.SetActive(true);
             Time.timeScale = 0;
+            player.GetComponent<PlayerStats>().turnIntoMouse();
+            musicPlayer.clip = PostMouse;
+            musicPlayer.Play();
+            PlayerPrefs.SetInt("Mouse", 1);
         }
     }
     public void windowClosed()
@@ -52,6 +66,7 @@ public class ActivateUpgradeMenu : MonoBehaviour
         TableRemover();
         Time.timeScale = 1;
         this.gameObject.SetActive(false);
+
     }
 
     public void ButtonChecker()

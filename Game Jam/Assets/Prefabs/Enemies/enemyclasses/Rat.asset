@@ -15,4 +15,4 @@ MonoBehaviour:
   hp: 10
   damage: 5
   speed: 3
-  value: 1
+  value: 3
