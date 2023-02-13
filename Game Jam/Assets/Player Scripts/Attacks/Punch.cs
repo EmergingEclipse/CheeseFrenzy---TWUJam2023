@@ -24,7 +24,7 @@ public class Punch : MonoBehaviour
 
         UpgradeMenu playerstat = player.GetComponent<UpgradeMenu>();
         knockback = playerstat.GetKnockBackBuff();
-        Damage = playerstat.GetPunch();
+        Damage = playerstat.GetPunch() + 5;
         StartCoroutine(SelfDestruct());
     }
 

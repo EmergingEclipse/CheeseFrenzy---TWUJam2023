@@ -25,7 +25,7 @@ public class musk : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Transform playerTransform = GetComponentInParent<Transform>();
         float TempDamage = playerstats.GetMuskDamage();
-        Damage = (int)TempDamage;
+        Damage = (int)(TempDamage / 2);
         foreach (GameObject enemy in enemies)
         {
             distance = Vector3.Distance(enemy.transform.position, playerTransform.position);

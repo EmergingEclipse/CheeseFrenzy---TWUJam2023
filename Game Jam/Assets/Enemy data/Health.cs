@@ -52,12 +52,19 @@ public class Health : MonoBehaviour
         }
 
         this.health -= amount;
-
+        StartCoroutine(Flash(this.GetComponent<SpriteRenderer>()));
         if (health <= 0)
         {
             Die();
         }
 
+    }
+
+    public IEnumerator Flash(SpriteRenderer sprite)
+    {
+        sprite.color = Color.red;
+        yield return new WaitForSeconds(.2f);
+        sprite.color = Color.white;
     }
 
     private void Die()
