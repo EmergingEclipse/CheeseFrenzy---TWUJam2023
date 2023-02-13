@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91898196738064520}
   - component: {fileID: 817145681088443462}
-  - component: {fileID: 5879121478936353132}
+  - component: {fileID: 5556914534573685301}
   m_Layer: 0
   m_Name: titleScreen
   m_TagString: Untagged
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5879121478936353132
+--- !u!95 &5556914534573685301
 Animator:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -95,7 +95,7 @@ Animator:
   m_GameObject: {fileID: 7671229949082614364}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5be2e325d6845c74da5019c4427a89d8, type: 2}
+  m_Controller: {fileID: 9100000, guid: 25facb8445026b849b21c1958ba4facb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
