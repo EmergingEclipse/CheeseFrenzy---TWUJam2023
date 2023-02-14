@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 842898799, guid: 2384dccbd68b1ee4aa01278eec9dfe68, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -143,8 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies: []
   distance: 0
+  bounces: 0
   damage: 10
   BounceMax: 0
+  total: 0
 --- !u!58 &7300290900430866904
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -6,14 +6,6 @@ public class Health : MonoBehaviour
 {
     private int MAX_HEALTH = 100;
     private int health = 100;
-    public AudioClip injured1;
-    public AudioClip injured2;
-    public AudioClip injured3;
-    public AudioClip injured4;
-    public List<AudioClip> injuredSounds;
-
-    public AudioSource audio;
-
 
 
 
@@ -23,11 +15,7 @@ public class Health : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Debug.Log(MAX_HEALTH + "this");
         PlayerHealthSetter();
-        injuredSounds = new List<AudioClip>();
-        injuredSounds.Add(injured1);
-        injuredSounds.Add(injured2);
-        injuredSounds.Add(injured3);
-        injuredSounds.Add(injured4);
+
 
 
 
@@ -67,16 +55,7 @@ public class Health : MonoBehaviour
 
         this.health -= amount;
         StartCoroutine(Flash(this.GetComponent<SpriteRenderer>()));
-        if (this.tag == "Player")
-        {
-            if (PlayerPrefs.GetInt("Mouse") == 1)
-            {
-                int num = Random.Range(0, 3);
-                AudioClip clip = injuredSounds[num];
-                audio.clip = clip;
-                audio.Play();
-            }
-        }
+
         if (health <= 0)
         {
             Die();
