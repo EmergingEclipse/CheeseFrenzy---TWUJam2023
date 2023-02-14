@@ -122,7 +122,16 @@ public class UpgradeMenu : MonoBehaviour
 
     void Start()
     {
-
+        if (PlayerPrefs.HasKey("firstPlay"))
+        {
+            continuedCostUpgrades();
+        }
+        else
+        {
+            initialUpgradeCost();
+            continuedCostUpgrades();
+            PlayerPrefs.SetInt("firstPlay", 1);
+        }
         punchDamage = 10;
         punchFrequency = 1.5f;
         slapPower = 1;
@@ -136,7 +145,7 @@ public class UpgradeMenu : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         healthy = player.GetComponent<Health>();
         healthy.PlayerHealthSetter();
-        continuedCostUpgrades();
+
 
     }
     public bool IsAbleToBuy(TMP_Text value)
@@ -338,7 +347,7 @@ public class UpgradeMenu : MonoBehaviour
         {
             HPModifier = PlayerPrefs.GetInt("HPModifier");
             nowHP = baseHP * HPModifier;
-            Debug.Log(nowHP);
+
             return (nowHP);
         }
         else
@@ -366,16 +375,17 @@ public class UpgradeMenu : MonoBehaviour
 
     public float GetSpeed()
     {
+        float baseSpeed = 5;
         if (PlayerPrefs.HasKey("SpeedModifier"))
         {
-            float baseSpeed = 5;
+
             speedModifier = PlayerPrefs.GetFloat("SpeedModifier");
             nowSpeed = baseSpeed * speedModifier;
             return (nowSpeed);
         }
         else
         {
-            float baseSpeed = 5;
+
             PlayerPrefs.SetFloat("SpeedModifier", 1.00f);
             speedModifier = PlayerPrefs.GetFloat("SpeedModifier");
             nowSpeed = baseSpeed * speedModifier;

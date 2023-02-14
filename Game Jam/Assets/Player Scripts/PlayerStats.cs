@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     public GameObject UpgradePanel;
-    public GameObject deathPanel;
+    public GameObject DeathPanel;
 
     public GameObject UI;
-    public static bool game_paused = false;
-    Rigidbody2D m_Rigidbody;
-    public float m_Speed = 5f;
+    public static bool gamePaused = false;
+    public Rigidbody2D mRigidbody;
+    public float mSpeed = 5f;
 
     public AudioSource musicPlayer;
     public AudioClip death;
@@ -26,10 +26,10 @@ public class PlayerStats : MonoBehaviour
 
 
 
-        m_Rigidbody = GetComponent<Rigidbody2D>();
+        mRigidbody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         spRend = GetComponent<SpriteRenderer>();
-        RunTimeData();
+        runTimeData();
         if (PlayerPrefs.GetInt("Mouse") == 1)
         {
             turnIntoMouse();
@@ -37,23 +37,24 @@ public class PlayerStats : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (game_paused)
+        if (gamePaused)
         {
-            activate_pausemenu();
+            activatePausemenu();
         }
-        if (!game_paused)
+        if (!gamePaused)
         {
-            PlayerMovement();
+            playerMovement();
         }
 
 
 
     }
 
-    private void PlayerMovement()
+    private void playerMovement()
     {
         Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
-        m_Rigidbody.MovePosition(transform.position + m_Input * Time.deltaTime * m_Speed);
+        mRigidbody.MovePosition(transform.position + m_Input * Time.deltaTime * mSpeed);
+        Debug.Log(transform.position + m_Input * Time.deltaTime * mSpeed);
         if (m_Input.x != 0 || m_Input.y != 0)
         {
             anim.SetFloat("moveX", m_Input.x);
@@ -66,20 +67,20 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    public void activate_pausemenu()
+    public void activatePausemenu()
     {
-        game_paused = true;
+        gamePaused = true;
         Time.timeScale = 0;
     }
     public void Deactivate_PauseMenu()
     {
-        game_paused = false;
+        gamePaused = false;
         Time.timeScale = 1;
     }
 
     public void DeathTrigger()
     {
-        activate_pausemenu();
+        activatePausemenu();
         musicChanger();
 
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -87,7 +88,7 @@ public class PlayerStats : MonoBehaviour
             GameObject.Destroy(enemy);
 
 
-        deathPanel.SetActive(true);
+        DeathPanel.SetActive(true);
         GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
         GameObject.Destroy(spawner);
         UI.SetActive(false);
@@ -110,12 +111,10 @@ public class PlayerStats : MonoBehaviour
 
 
     //creates all of the base upgrades on initial runtime so upgrades will work
-    public void RunTimeData()
+    public void runTimeData()
     {
 
-        m_Speed = GetComponent<UpgradeMenu>().GetSpeed();
-
-
+        mSpeed = GetComponentInParent<UpgradeMenu>().GetSpeed() + 1;
     }
 
 
