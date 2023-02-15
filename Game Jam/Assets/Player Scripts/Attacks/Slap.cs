@@ -15,7 +15,7 @@ public class Slap : MonoBehaviour
     private float delay = 0.15f;
     Rigidbody2D rb;
 
-    public UnityEvent OnBegin, OnDone;
+    //public UnityEvent OnBegin, OnDone;
     void Start()
     {
 
@@ -23,11 +23,12 @@ public class Slap : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
+
         UpgradeMenu playerstat = player.GetComponent<UpgradeMenu>();
-        knockbackbuff = playerstat.GetKnockBackBuff();
-        knockback = playerstat.GetSlapKnockBack();
+        //knockbackbuff = playerstat.GetKnockBackBuff();
+        //knockback = playerstat.GetSlapKnockBack();
         Damage = playerstat.GetSlapDamage();
-        knockback = knockback * knockbackbuff;
+        //knockback = knockback * knockbackbuff;
         StartCoroutine(SelfDestruct());
 
     }
@@ -37,32 +38,32 @@ public class Slap : MonoBehaviour
         if (collision.GetComponent<Health>() != null && collision.tag == "Enemy")
         {
 
-            rb = collision.GetComponentInParent<Rigidbody2D>();
+            //rb = collision.GetComponentInParent<Rigidbody2D>();
             Health health = collision.GetComponent<Health>();
             health.Damage(Damage);
             GameObject enemy = collision.gameObject;
-            PlayFeedback(enemy);
+            //PlayFeedback(enemy);
             Debug.Log(Damage);
 
         }
 
     }
-    public void PlayFeedback(GameObject sender)
-    {
-        StopCoroutine(Reset());
-        OnBegin?.Invoke();
-        Vector2 direction = (transform.position - sender.transform.position).normalized;
-        try
-        {
-            rb.AddForce(direction * knockback, ForceMode2D.Impulse);
-        }
-        catch
-        {
+    // public void PlayFeedback(GameObject sender)
+    // {
+    //     StopCoroutine(Reset());
+    //     OnBegin?.Invoke();
+    //     Vector2 direction = (transform.position - sender.transform.position).normalized;
+    //     try
+    //     {
+    //         rb.AddForce(direction * knockback, ForceMode2D.Impulse);
+    //     }
+    //     catch
+    //     {
 
-        }
-        StartCoroutine(Reset());
+    //     }
+    //     StartCoroutine(Reset());
 
-    }
+    // }
     private IEnumerator Reset()
     {
         yield return new WaitForSeconds(delay);
@@ -74,7 +75,7 @@ public class Slap : MonoBehaviour
         {
 
         }
-        OnDone?.Invoke();
+        //OnDone?.Invoke();
 
     }
 

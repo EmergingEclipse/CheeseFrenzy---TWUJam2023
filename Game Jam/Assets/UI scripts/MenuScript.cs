@@ -13,6 +13,8 @@ public class MenuScript : MonoBehaviour
     private float secondsCount;
     private int minuteCount;
     private int hourCount;
+    [SerializeField] private GameObject ThankyouRoom;
+    [SerializeField] private GameObject LanMenu;
 
     [SerializeField] GameObject winScreen;
 
@@ -47,6 +49,11 @@ public class MenuScript : MonoBehaviour
         {
             musicChanger();
         }
+    }
+
+    public void reset()
+    {
+        PlayerPrefs.DeleteAll();
     }
 
     public void ReturnTMenu()
@@ -87,6 +94,15 @@ public class MenuScript : MonoBehaviour
         catch
         {
 
+        }
+    }
+
+    public void ThankyouRoomButton()
+    {
+        if (PlayerPrefs.HasKey("hasWon"))
+        {
+            ThankyouRoom.SetActive(true);
+            LanMenu.SetActive(false);
         }
     }
 

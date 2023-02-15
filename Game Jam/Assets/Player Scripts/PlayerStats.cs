@@ -54,7 +54,7 @@ public class PlayerStats : MonoBehaviour
     {
         Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0);
         mRigidbody.MovePosition(transform.position + m_Input * Time.deltaTime * mSpeed);
-        Debug.Log(transform.position + m_Input * Time.deltaTime * mSpeed);
+
         if (m_Input.x != 0 || m_Input.y != 0)
         {
             anim.SetFloat("moveX", m_Input.x);
@@ -92,6 +92,7 @@ public class PlayerStats : MonoBehaviour
         GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
         GameObject.Destroy(spawner);
         UI.SetActive(false);
+        Deactivate_PauseMenu();
 
     }
 

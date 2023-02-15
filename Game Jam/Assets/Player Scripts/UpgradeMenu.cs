@@ -163,10 +163,10 @@ public class UpgradeMenu : MonoBehaviour
     }
     public void initialUpgradeCost()
     {
-        PlayerPrefs.SetFloat("SpeedModifierCost", 100);
+        PlayerPrefs.SetFloat("SpeedModifierCost", 400);
         PlayerPrefs.SetFloat("HPModifierCost", 150);
         PlayerPrefs.SetFloat("KnockBackModifierCost", 100);
-        PlayerPrefs.SetFloat("BaseDamageModifierCost", 150);
+        PlayerPrefs.SetFloat("BaseDamageModifierCost", 800);
     }
     public void continuedCostUpgrades()
     {
@@ -287,7 +287,7 @@ public class UpgradeMenu : MonoBehaviour
         int damageIncrease = (baseDamage * 1);
         cheeseDamage = cheeseDamage + damageIncrease;
 
-        cheeseBounceCount += 2;
+        cheeseBounceCount += 1;
         CheeseWheelActive = 1;
 
     }
@@ -400,12 +400,12 @@ public class UpgradeMenu : MonoBehaviour
         if (PlayerPrefs.HasKey("BaseDamage"))
         {
             baseDamage = PlayerPrefs.GetInt("BaseDamage");
-            PlayerPrefs.SetInt("BaseDamage", baseDamage + 5);
+            PlayerPrefs.SetInt("BaseDamage", baseDamage + 20);
 
         }
         else
         {
-            PlayerPrefs.SetInt("BaseDamage", 10);
+            PlayerPrefs.SetInt("BaseDamage", 15);
         }
     }
 
