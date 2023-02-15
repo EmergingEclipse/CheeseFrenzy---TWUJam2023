@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2641039734726746749}
   - component: {fileID: 6130352561874310518}
   - component: {fileID: 2768584028422539378}
+  - component: {fileID: 778233991854080438}
   m_Layer: 0
   m_Name: armSlapR
   m_TagString: Arm
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &6130352561874310518
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,7 +106,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &2768584028422539378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,9 +122,39 @@ MonoBehaviour:
   Damage: 0
   knockbackbuff: 0
   knockback: 0
-  OnBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDone:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!60 &778233991854080438
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5066872718327388477}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5124563, y: 0.12007978}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.03351077, y: 1.5786972}
+      - {x: -0.4078591, y: 1.6069134}
+      - {x: -0.20406443, y: 1.2694572}
+      - {x: 0.12224966, y: 0.8146329}
+      - {x: -0.12892827, y: 0.59124386}
+      - {x: -0.25312677, y: 0.03560239}
+      - {x: 0.19791831, y: -0.048792705}
+      - {x: 0.30084333, y: 0.16815056}
+      - {x: 0.36135873, y: 0.4175094}
+      - {x: 0.5060825, y: 0.7097319}
+      - {x: 0.55062795, y: 0.8758441}

@@ -12,12 +12,13 @@ public class musk : MonoBehaviour
     void Start()
     {
         playerstats = GetComponentInParent<UpgradeMenu>();
+        StartCoroutine(muskDMG());
     }
     void FixedUpdate()
     {
         float scale = playerstats.GetMuskRange() / 2;
         GetComponent<Transform>().localScale = new Vector3(scale, scale, scale);
-        StartCoroutine(muskDMG());
+
     }
     public IEnumerator muskDMG()
     {
@@ -25,7 +26,7 @@ public class musk : MonoBehaviour
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
         Transform playerTransform = GetComponentInParent<Transform>();
         float TempDamage = playerstats.GetMuskDamage();
-        Damage = (int)(TempDamage / 2);
+        Damage = (int)(TempDamage / 2.5);
         foreach (GameObject enemy in enemies)
         {
             distance = Vector3.Distance(enemy.transform.position, playerTransform.position);
@@ -36,5 +37,6 @@ public class musk : MonoBehaviour
 
             }
         }
+        StartCoroutine(muskDMG());
     }
 }

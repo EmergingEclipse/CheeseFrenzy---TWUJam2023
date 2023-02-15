@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8843692160441052079}
   - component: {fileID: 7348481286837879814}
   - component: {fileID: 3871513598803123065}
+  - component: {fileID: 3772819693820654690}
   m_Layer: 0
   m_Name: armSlapL
   m_TagString: Arm
@@ -88,7 +89,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &7348481286837879814
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -105,7 +106,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &3871513598803123065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,9 +122,38 @@ MonoBehaviour:
   Damage: 0
   knockbackbuff: 0
   knockback: 0
-  OnBegin:
-    m_PersistentCalls:
-      m_Calls: []
-  OnDone:
-    m_PersistentCalls:
-      m_Calls: []
+--- !u!60 &3772819693820654690
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2455280363143515516}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.4975087, y: 0.11011466}
+    oldSize: {x: 2, y: 2}
+    newSize: {x: 2, y: 2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.21041463, y: 0.8458014}
+      - {x: 0.26164007, y: 1.1633164}
+      - {x: 0.33623618, y: 1.6292893}
+      - {x: 0.05172065, y: 1.6494021}
+      - {x: -0.5761448, y: 0.854023}
+      - {x: -0.45651203, y: 0.3535049}
+      - {x: -0.1782341, y: -0.07183145}
+      - {x: 0.14079705, y: -0.11205682}
+      - {x: 0.08826074, y: 0.23430443}
+      - {x: 0.09097874, y: 0.6667981}

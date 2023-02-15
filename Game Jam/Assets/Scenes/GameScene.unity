@@ -2359,7 +2359,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 30.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3133,11 +3133,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2117665131, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: SlapActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2117665131, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: PunchActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2117665131, guid: fa076a943abf9ff428ba6ce263223161, type: 3}
       propertyPath: ButtonUpdater
@@ -41712,6 +41712,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 146731953}
+  ThankyouRoom: {fileID: 0}
+  LanMenu: {fileID: 0}
   winScreen: {fileID: 0}
   PostMouse: {fileID: 8300000, guid: 2a050d0980af8d5489e1f7e6b3670f02, type: 3}
   musicPlayer: {fileID: 295044606}
