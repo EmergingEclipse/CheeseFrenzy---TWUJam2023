@@ -14,11 +14,14 @@ public class MenuScript : MonoBehaviour
     private int minuteCount;
     private int hourCount;
 
+    [SerializeField] GameObject winScreen;
+
     [SerializeField] private AudioClip PostMouse;
     [SerializeField] private AudioSource musicPlayer;
 
     public void playgame()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("GameScene");
     }
 
@@ -48,11 +51,13 @@ public class MenuScript : MonoBehaviour
 
     public void ReturnTMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("TitleScreen");
     }
 
     public void retryScene()
     {
+        Time.timeScale = 1;
         Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(scene.name);
     }
 
@@ -72,10 +77,16 @@ public class MenuScript : MonoBehaviour
             {
                 minuteCount = 0;
             }
+            if (minuteCount > 15)
+            {
+                Time.timeScale = 0;
+                winScreen.SetActive(true);
+                PlayerPrefs.SetInt("hasWon", 1);
+            }
         }
         catch
         {
-        
+
         }
     }
 
